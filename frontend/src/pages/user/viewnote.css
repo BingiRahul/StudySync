@@ -1,0 +1,273 @@
+:root {
+  --primary: #60a5fa; /* Primary button color */
+  --primary-hover: #2563eb; /* Primary button hover color */
+  --bg: #fcfcfd; /* Page background */
+  --navbar-bg: #fff; /* Card and modal background */
+  --text: #22223b; /* Primary text color */
+  --text-light: #6c757d; /* Secondary text color */
+  --border: #e9ecef; /* Border color */
+  --error: #f87171; /* Delete and confirm button color */
+  --error-hover: #dc2626; /* Delete and confirm button hover color */
+  --modal-overlay: rgba(0, 0, 0, 0.85); /* Modal overlay background */
+  --input-text: #374151; /* Input and modal text color */
+  --cancel-btn: #e5e7eb; /* Cancel button background */
+  --cancel-btn-hover: #d1d5db; /* Cancel button hover background */
+  --tag-bg: #dbeafe; /* Tag background */
+  --tag-text: #1e40af; /* Tag text color */
+  --tag-hover: #bfdbfe; /* Tag hover background */
+  --card-bg: #f9fafb; /* Description background */
+  --radius: 10px; /* Border radius */
+  --transition-fast: 0.2s ease-in-out; /* Fast transitions */
+}
+
+.note-page {
+  padding: 40px 32px;
+  background: var(--bg);
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+}
+
+.note-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: var(--navbar-bg);
+  border-radius: 20px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  padding: 32px;
+}
+
+.note-header {
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 20px;
+  margin-bottom: 32px;
+}
+
+.note-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--text);
+  margin: 0;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+.note-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+  font-size: 1rem;
+  color: var(--text-light);
+  font-weight: 500;
+}
+
+.note-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.tag {
+  background: var(--tag-bg);
+  color: var(--tag-text);
+  font-size: 0.85rem;
+  padding: 6px 12px;
+  border-radius: var(--radius);
+  font-weight: 600;
+  transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+.tag:hover {
+  background: var(--tag-hover);
+  transform: translateY(-2px);
+}
+
+.note-section {
+  margin-bottom: 32px;
+}
+
+.note-section h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 16px;
+  letter-spacing: -0.015em;
+}
+
+.note-description {
+  font-size: 1rem;
+  color: var(--input-text);
+  line-height: 1.7;
+  max-height: 240px;
+  overflow-y: auto;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--card-bg);
+}
+
+.document-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.note-images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.note-image {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.note-image:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.note-summary,
+.note-questions {
+  font-size: 1rem;
+  color: var(--input-text);
+  line-height: 1.7;
+  padding-left: 24px;
+}
+
+.note-summary li,
+.note-questions li {
+  margin-bottom: 12px;
+}
+
+.note-actions {
+  display: flex;
+  justify-content: flex-start;
+  gap: 16px;
+  margin-top: 32px;
+  padding-top: 20px;
+  border-top: 2px solid var(--border);
+  flex-wrap: wrap;
+}
+
+.action-btn {
+  background: var(--primary);
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+}
+
+.action-btn:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.delete-btn {
+  background: var(--error);
+}
+
+.delete-btn:hover {
+  background: var(--error-hover);
+}
+
+.image-modal-overlay,
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--modal-overlay);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.image-modal-content {
+  max-width: 95%;
+  max-height: 95%;
+}
+
+.enlarged-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content {
+  background: var(--navbar-bg);
+  border-radius: 16px;
+  padding: 24px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 16px;
+}
+
+.modal-content p {
+  font-size: 1rem;
+  color: var(--input-text);
+  line-height: 1.6;
+  margin: 0 0 24px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.modal-btn {
+  padding: 8px 16px;
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.confirm-btn {
+  background: var(--error);
+  color: #ffffff;
+  border: none;
+}
+
+.confirm-btn:hover {
+  background: var(--error-hover);
+  transform: translateY(-2px);
+}
+
+.cancel-btn {
+  background: var(--cancel-btn);
+  color: var(--input-text);
+  border: none;
+}
+
+.cancel-btn:hover {
+  background: var(--cancel-btn-hover);
+  transform: translateY(-2px);
+}

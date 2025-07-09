@@ -1,0 +1,239 @@
+:root {
+  --primary: #60a5fa;
+  --primary-hover: #2563eb;
+  --bg: #fcfcfd;
+  --navbar-bg: #fff;
+  --text: #22223b;
+  --text-light: #6c757d;
+  --border: #e9ecef;
+  --radius: 10px;
+  --transition-fast: 0.2s ease-in-out;
+  --transition-slow: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.user-content.full-screen {
+  padding-top: 0;
+}
+
+body,
+.user-layout {
+  min-height: 100vh;
+  background: var(--bg);
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text);
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.user-navbar {
+  background: var(--navbar-bg);
+  border-bottom: 1px solid var(--border);
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: background var(--transition-fast), border-color var(--transition-fast);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 100vw;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.logo:hover {
+  color: var(--primary-hover);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-light);
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: var(--radius);
+  font-size: 0.96rem;
+  background: none;
+  transition: color var(--transition-fast), transform var(--transition-slow);
+}
+
+.nav-links a:hover {
+  color: var(--primary-hover);
+  transform: scale(1.08);
+}
+
+.nav-links .user-active {
+  color: var(--primary-hover);
+  font-size: 1rem;
+  font-weight: 600;
+  transform: scale(1.08);
+  transition: color var(--transition-fast), transform var(--transition-slow);
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  color: var(--text-light);
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.dropdown-toggle:hover {
+  background: #eef2ff;
+  color: var(--primary-hover);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  min-width: 160px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  z-index: 10;
+  padding: 6px 0;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-menu a,
+.dropdown-menu button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  color: var(--text-light);
+  background: none;
+  border: none;
+  width: 100%;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background var(--transition-fast), color var(--transition-fast), transform var(--transition-slow);
+}
+
+.dropdown-menu a:hover,
+.dropdown-menu button:hover {
+  color: var(--primary-hover);
+  transform: translateX(4px);
+}
+
+.dropdown-menu .user-active {
+  color: var(--primary-hover);
+  font-weight: 600;
+}
+
+.user-icon,
+.menu-icon,
+.dropdown-icon {
+  font-size: 1.05rem;
+  transition: color var(--transition-fast), transform var(--transition-slow);
+}
+
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-light);
+}
+
+@media (max-width: 900px) {
+  .user-navbar {
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 700px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: var(--navbar-bg);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    padding: 20px 0;
+    gap: 10px;
+    z-index: 999;
+    animation: slideIn 0.2s ease-in-out;
+  }
+
+  .nav-links.mobile-open {
+    display: flex;
+  }
+
+  .mobile-menu-toggle {
+    display: block;
+  }
+
+  @keyframes slideIn {
+    from {
+      transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    border: none;
+    background: none;
+    padding: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1.1rem;
+  }
+
+  .user-navbar {
+    padding: 0 8px;
+  }
+}
