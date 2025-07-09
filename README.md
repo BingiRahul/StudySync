@@ -1,4 +1,3 @@
----
 
 ```markdown
 # 📚 StudySync – AI-powered Study Platform
