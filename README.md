@@ -1,7 +1,11 @@
 
-```markdown
-# 📚 StudySync – AI-powered Study Platform
 
+
+---
+# Title: "StudySync – AI-powered Study Platform"
+# Description: "Full-stack platform using Node.js, MongoDB, React, and Gemini AI"
+# 📚 StudySync – AI-powered Study Platform
+---
 **StudySync** is a full-stack learning productivity platform that allows users to:
 
 ✅ Upload and manage study notes  
@@ -11,11 +15,8 @@
 ✅ Manage user authentication and profiles  
 
 > Powered by **Node.js**, **Express**, **MongoDB**, **Google Gemini AI** on the backend, and **React**, **React Router**, and **Context API** on the frontend.
-
----
-
 ## 🧱 Project Structure
-
+---
 ```
 
 studysync/
@@ -157,7 +158,6 @@ Runs at: `http://localhost:3000`
 > ⚠️ Ensure backend is running at `http://localhost:5000`
 
 ---
----
 
 ### 🧩 Frontend Tech Stack
 
@@ -177,15 +177,17 @@ npm install react-router-dom axios jspdf react-icons uuid
 
 ---
 
-## 🎯 Key Features
 
-✅ Upload study notes (PDF, DOCX, TXT)
-✅ Auto-generate summaries, tags, quizzes, and flashcards with AI
-✅ Visual dashboard and progress tracking
-✅ Responsive UI with custom CSS styling
-✅ PDF summary generation using jsPDF
-✅ Review flashcards and quizzes anytime
-✅ Secure login & profile management
+### 🎯 Key Features
+
+* ✅ Upload study notes (PDF, DOCX, TXT)
+* ✅ Auto-generate summaries, tags, quizzes, and flashcards with AI
+* ✅ Visual dashboard and progress tracking
+* ✅ Responsive UI with custom CSS styling
+* ✅ PDF summary generation using jsPDF
+* ✅ Review flashcards and quizzes anytime
+* ✅ Secure login & profile management
+
 
 ---
 
@@ -221,9 +223,3 @@ Pull requests are welcome! For major changes, please open an issue first.
 
 Pushing AI-powered productivity for students, one quiz at a time.
 
----
-
-```
-
-Let me know if you'd like this delivered as a downloadable file (Markdown or PDF), or if you want to add **screenshots, badges, deployment steps, or API usage examples**!
-```
